@@ -1,0 +1,56 @@
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.header{
+  padding: 0%;
+}
+
+.Navbar{
+  background-color: cadetblue;
+  width: 100%;
+  padding: 1rem;
+}
+.link{
+  font-size: 1.5rem;
+}
+.logo{
+  font-size: 1.5rem;
+}
+
+.CartWidget{
+  padding: 1rem;
+}
+
+.ItemListConteiner{
+  font-size: 5rem;
+  text-align: center;
+  height: 600px;
+}
+
+footer {
+  height: auto;
+  background-color: cadetblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.p-footer {
+  align-self: center;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.redes {
+  width: 25%;
+  list-style: none;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
