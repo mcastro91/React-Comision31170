@@ -1,7 +1,11 @@
-export default function ItemListConteiner (){
+import { Container } from "react-bootstrap"
+
+export default function ItemListConteiner ({title}){
   return(
+    <Container>
     <div className="ItemListConteiner">
-      <p>Este va a ser el contenedor de los productos de la tienda</p>
+      <p>{title}</p>
     </div>
+    </Container>
   )
 }
