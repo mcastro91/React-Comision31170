@@ -1,7 +1,7 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 
-export default function ItemCount({stock, initial}) {
+export default function ItemCount({ stock, initial }) {
   const [count, setCount] = React.useState(initial);
 
   const addCount = () => {
@@ -21,20 +21,24 @@ export default function ItemCount({stock, initial}) {
   };
 
   const StockButton = ({ handleOnClick, text }) => {
-    return <Button className="stock-button" onClick={() => handleOnClick()}>{text}</Button>;
+    return <Button className="stockButton" onClick={() => handleOnClick()}>{text}</Button>;
   };
 
   const AddButton = ({ handleOnSubmit, text }) => {
-    return <Button className="add-button" onClick={() => handleOnSubmit()}> {text} </Button>;
+    return <Button className="addButton" onClick={() => handleOnSubmit()}> {text} </Button>;
   };
 
 
   return (
     <div>
       <StockButton text="-" handleOnClick={decreaseCount} />
-      <span>{count}</span>
+      <span className="count">{count}</span>
       <StockButton text="+" handleOnClick={addCount} />
-      <AddButton text="Añadir al carrito" handleOnSubmit={onSubmit} />
+      <Row>
+        <Col>
+          <AddButton text="Añadir al carrito" handleOnSubmit={onSubmit} />
+        </Col>
+      </Row>
     </div>
   );
 }

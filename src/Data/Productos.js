@@ -1,0 +1,18 @@
+const Productos = [
+  { id: "1", name: "Xiaomi Redmi Note 10", price: "56899", description: "Ligero y elegante, amor a primera vista. Parte posterior curva 3D para mejorar el agarre y disfrutar de la máxima comodidad. El suave detalle de los colores naturales acentúa una sencillez de alta calidad", category: "celular", stock: "4", img: "../img/Xiaomi Redmi Note 10.jpg"},
+  { id: "2", name: "Motorola Edge 20", price: "119999", description: "El Motorola Edge 20 es la segunda generación de la serie Edge. Con una pantalla OLED de 6.7 pulgadas a resolución FHD+, está potenciado por un procesador Snapdragon 778G con 8GB de memoria RAM y 256GB de almacenamiento", category: "celular", stock: "10", img: "../img/Motorola Edge 20.jpg" },
+  { id: "3", name: "Samsung Galaxy S20", price: "86999", description: "Este es un teléfono hecho a la medida para fanáticos de todo tipo. Independientemente de si sos fanático de la fotografía, los juegos o llenar tus redes con todo lo que te inspira, hicimos la mejor combinación de la innovación del S20", category: "celular", stock: "5", img: "../img/Samsung Galaxy S20.jpg" },
+  { id: "4", name: `Smart TV TCL S65A FullHD 40"`, price: "46999", description: "Con el Smart TV L40S65A vas a acceder a las aplicaciones en las que se encuentran tus contenidos favoritos. Además, podés navegar por Internet, interactuar en redes sociales y divertirte con videojuegos", category: "television", stock: "2", img: "../img/Smart TV TCL S65A FullHD 40.png" },
+  { id: "5", name: `Smart TV Philips 7000 4K 50"`, price: "84499", description: "Con el Smart TV 50PUD7406 vas a acceder a las aplicaciones en las que se encuentran tus contenidos favoritos. Además, podés navegar por Internet, interactuar en redes sociales y divertirte con videojuegos.", category: "television", stock: "7", img: "../img/Smart TV Philips 7000 4K 50.jpg" },
+  { id: "6", name: `Smart TV Xiaomi 4K 55"`, price: "119900", description: "Con el Smart TV Mi TV P1 55 vas a acceder a las aplicaciones en las que se encuentran tus contenidos favoritos. Además, podés navegar por Internet, interactuar en redes sociales y divertirte con videojuegos.", category: "television", stock: "1", img: "../img/Smart TV Xiaomi 4K 55.jpeg" },
+  { id: "7", name: "Notebook HP Pavilion ec1035la", price: "147999", description: "La notebook HP Pavilion Gaming 15-ec1035la es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.", category: "notebook", stock: "12", img: "../img/Notebook HP Pavilion.jpg" },
+  { id: "8", name: "Notebook HP 240 G8", price: "49499", description: "La notebook HP 240 G8 es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina", category: "notebook", stock: "7", img: "../img/Notebook HP 240 G8.jpg" },
+  { id: "9", name: "Notebook Dell XPS 7390", price: "331000", description: "Con la notebook 2 en 1 Dell XPS 7390 vas a disfrutar de la combinación única entre portabilidad y usabilidad. Su principal beneficio es su capacidad de transformarse en una tablet sin perder la potencia y el rendimiento de una computadora portátil", category: "notebook", stock: "5", img: "../img/Notebook Dell XPS 7390.JPG" }
+]
+
+export const traerProductos = new Promise((resolve, reject) => {
+
+  let respond = true
+  setTimeout(() => { respond ? resolve(Productos) : reject(console.log("Algo salio mal")) }, 1000)
+
+})

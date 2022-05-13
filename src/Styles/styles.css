@@ -1,33 +1,66 @@
-
-*{
+* {
   padding: 0;
   margin: 0;
 }
 
-.header{
+.header {
   padding: 0%;
 }
 
-.Navbar{
+.Navbar {
   background-color: cadetblue;
   width: 100%;
   padding: 1rem;
 }
-.link{
-  font-size: 1.5rem;
-}
-.logo{
+
+.link {
   font-size: 1.5rem;
 }
 
-.CartWidget{
+.logo {
+  font-size: 1.5rem;
+}
+
+.ItemListConteiner {
+  text-align: center;
+  padding: 2rem;
+}
+
+.ItemList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 1.5rem;
+}
+
+.descripcionCard {
+  height: 20rem;
+  padding: 2rem;
+  font-size: 1rem;
+}
+
+.imgCard {
+  width: 16rem;
+  height: 16rem;
+  padding: .5rem;
+}
+
+.titleCard {
+  height: 8rem;
   padding: 1rem;
 }
 
-.ItemListConteiner{
-  font-size: 5rem;
-  text-align: center;
-  height: 600px;
+.itemCount {
+  font-size: 1rem;
+}
+
+.count {
+  padding: 1rem;
+}
+
+.stockButton {
+  padding: .5rem;
+  margin: 1rem;
 }
 
 footer {
@@ -52,5 +85,3 @@ footer {
   flex-direction: row;
   justify-content: space-around;
 }
-
-
