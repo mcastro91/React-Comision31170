@@ -1,15 +1,15 @@
 import React from "react"
 import { Container } from "react-bootstrap"
-import { traerProductos } from "../../Data/Productos"
+import { getProducts } from "../../Data/Productos"
 import ItemList from "../ItemList/ItemList"
 
 export default function ItemListConteiner({ title }) {
 
-  const [listaProductos, setListaProductos] = React.useState([])
+  const [productsList, setProductsList] = React.useState([])
 
   React.useEffect(() => {
-    traerProductos
-      .then((res) => setListaProductos(res))
+    getProducts
+      .then((res) => setProductsList(res))
       .catch((error) => console.log(error))
 
   }, [])
@@ -18,7 +18,7 @@ export default function ItemListConteiner({ title }) {
     <Container>
       <div className="ItemListConteiner">
         <h1>{title}</h1>
-        <ItemList listaProductos={listaProductos} />
+        <ItemList productsList={productsList} />
       </div>
     </Container>
   )

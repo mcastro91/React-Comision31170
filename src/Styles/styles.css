@@ -50,8 +50,43 @@
   padding: 1rem;
 }
 
+.cardBodyDetail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: 3rem;
+  margin-top: 1rem;
+}
+
+.imgCardDetail {
+  width: 50rem;
+}
+
+.titleCardDetail {
+  padding: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.titleCardDetailDos {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bolder;
+  padding: .5rem;
+}
+
+.descripcionCardDetail {
+  width: 20rem;
+  margin-bottom: 3rem;
+}
+
 .itemCount {
-  font-size: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .count {
@@ -61,6 +96,14 @@
 .stockButton {
   padding: .5rem;
   margin: 1rem;
+}
+
+.addButton {
+  padding: .5rem;
+}
+
+.features {
+  padding: 2.5rem;
 }
 
 footer {

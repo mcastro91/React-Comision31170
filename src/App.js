@@ -1,6 +1,7 @@
 import Footer from "./Componets/Footer/Footer";
 import ItemListConteiner from "./Componets/ItemListConteiner/ItemListConteiner";
 import Header from "./Componets/Header/Header";
+import ItemDetailConteiner from "./Componets/ItemDetailConteiner/ItemDetailConteiner";
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <Header />
       <ItemListConteiner title="Productos"/>
+      <ItemDetailConteiner />
       <Footer />
     </div>
   );

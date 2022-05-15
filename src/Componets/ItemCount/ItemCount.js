@@ -30,7 +30,7 @@ export default function ItemCount({ stock, initial }) {
 
 
   return (
-    <div>
+    <div className="itemCount">
       <StockButton text="-" handleOnClick={decreaseCount} />
       <span className="count">{count}</span>
       <StockButton text="+" handleOnClick={addCount} />

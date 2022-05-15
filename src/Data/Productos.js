@@ -1,5 +1,6 @@
-const Productos = [
-  { id: "1", name: "Xiaomi Redmi Note 10", price: "56899", description: "Ligero y elegante, amor a primera vista. Parte posterior curva 3D para mejorar el agarre y disfrutar de la máxima comodidad. El suave detalle de los colores naturales acentúa una sencillez de alta calidad", category: "celular", stock: "4", img: "../img/Xiaomi Redmi Note 10.jpg"},
+const Products = [
+  { id: "1", name: "Xiaomi Redmi Note 10", price: "56899", description: "Ligero y elegante, amor a primera vista. Parte posterior curva 3D para mejorar el agarre y disfrutar de la máxima comodidad. El suave detalle de los colores naturales acentúa una sencillez de alta calidad.", category: "celular", stock: "4", img: "../img/Xiaomi Redmi Note 10.jpg", features: {featuresOne: "Dispositivo liberado para que elijas la compañía telefónica que prefieras.", featuresTwo: `Pantalla AMOLED de 6.67".`, featuresThree: "Tiene 4 cámaras traseras de 108Mpx/8Mpx/5Mpx/2Mpx.", featuresFour: "Cámara delantera de 16Mpx.", featuresFive: "Procesador Snapdragon 732G Octa-Core de 2.3GHz con 6GB de RAM.", featuresSix: "Batería de 5020mAh", featuresSeven: "Memoria interna de 128GB.", featuresEight: "Con reconocimiento facial y sensor de huella dactilar."
+} },
   { id: "2", name: "Motorola Edge 20", price: "119999", description: "El Motorola Edge 20 es la segunda generación de la serie Edge. Con una pantalla OLED de 6.7 pulgadas a resolución FHD+, está potenciado por un procesador Snapdragon 778G con 8GB de memoria RAM y 256GB de almacenamiento", category: "celular", stock: "10", img: "../img/Motorola Edge 20.jpg" },
   { id: "3", name: "Samsung Galaxy S20", price: "86999", description: "Este es un teléfono hecho a la medida para fanáticos de todo tipo. Independientemente de si sos fanático de la fotografía, los juegos o llenar tus redes con todo lo que te inspira, hicimos la mejor combinación de la innovación del S20", category: "celular", stock: "5", img: "../img/Samsung Galaxy S20.jpg" },
   { id: "4", name: `Smart TV TCL S65A FullHD 40"`, price: "46999", description: "Con el Smart TV L40S65A vas a acceder a las aplicaciones en las que se encuentran tus contenidos favoritos. Además, podés navegar por Internet, interactuar en redes sociales y divertirte con videojuegos", category: "television", stock: "2", img: "../img/Smart TV TCL S65A FullHD 40.png" },
@@ -10,9 +11,9 @@ const Productos = [
   { id: "9", name: "Notebook Dell XPS 7390", price: "331000", description: "Con la notebook 2 en 1 Dell XPS 7390 vas a disfrutar de la combinación única entre portabilidad y usabilidad. Su principal beneficio es su capacidad de transformarse en una tablet sin perder la potencia y el rendimiento de una computadora portátil", category: "notebook", stock: "5", img: "../img/Notebook Dell XPS 7390.JPG" }
 ]
 
-export const traerProductos = new Promise((resolve, reject) => {
+export const getProducts = new Promise((resolve, reject) => {
 
   let respond = true
-  setTimeout(() => { respond ? resolve(Productos) : reject(console.log("Algo salio mal")) }, 1000)
-
+  setTimeout(() => { respond ? resolve(Products) : reject(console.log("Algo salio mal")) }, 1000)
 })
+
