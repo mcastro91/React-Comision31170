@@ -15,15 +15,18 @@
 
 .link {
   font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
 }
 
-.logo {
-  font-size: 1.5rem;
-}
-
-.ItemListConteiner {
+.itemListConteiner {
   text-align: center;
   padding: 2rem;
+}
+
+.titleLisConteiner {
+  font-size: 3rem;
+  margin-bottom: 5rem;
 }
 
 .ItemList {
@@ -102,8 +105,27 @@
   padding: .5rem;
 }
 
+.featuresConteiner {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
 .features {
-  padding: 2.5rem;
+  padding: .5rem;
+  list-style: none;
+}
+
+.features:nth-child(2n+0) {
+  background-color: grey;
+}
+
+.features:nth-child(2n+1) {
+  background-color: aliceblue;
+}
+
+.loading {
+  text-align: center;
+  height: 30rem;
 }
 
 footer {

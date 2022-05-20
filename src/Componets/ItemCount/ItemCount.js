@@ -28,7 +28,6 @@ export default function ItemCount({ stock, initial }) {
     return <Button className="addButton" onClick={() => handleOnSubmit()}> {text} </Button>;
   };
 
-
   return (
     <div className="itemCount">
       <StockButton text="-" handleOnClick={decreaseCount} />

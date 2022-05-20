@@ -1,16 +1,22 @@
-import Footer from "./Componets/Footer/Footer";
-import ItemListConteiner from "./Componets/ItemListConteiner/ItemListConteiner";
-import Header from "./Componets/Header/Header";
-import ItemDetailConteiner from "./Componets/ItemDetailConteiner/ItemDetailConteiner";
-
+import { Route, BrowserRouter, Routes } from "react-router-dom"
+import Home from "./view/Home/Home";
+import ProductsDetail from "./view/ProductsDetail/ProductsDetail";
+import Products from "./view/Products/Products";
+import Category from "./view/Category/Category"
+import Cart from "./view/Cart/Cart";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <ItemListConteiner title="Productos"/>
-      <ItemDetailConteiner />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route exac path="/" element={<Home />} />
+          <Route exac path="/products" element={<Products />} />
+          <Route exac path="/products/:id" element={<ProductsDetail />} />
+          <Route exac path="/category/:category" element={<Category />} />
+          <Route exac path="/cart" element={<Cart />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

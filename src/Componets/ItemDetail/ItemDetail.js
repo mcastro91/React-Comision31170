@@ -1,10 +1,9 @@
 import { Card, Row, Col, Container } from "react-bootstrap";
-import ItemCount from "../ItemCount/ItemCount";
+import ItemCount from "../ItemCount/ItemCount"
 
-export default function ItemDetail({ product, features }) {
+export default function ItemDetail({ product }) {
   return (
-
-    <Card style={{ width: '80rem' }}>
+    <Card style={{ width: '80rem', margin: "5rem" }}>
       <Container>
         <Row>
           <Col>
@@ -27,24 +26,10 @@ export default function ItemDetail({ product, features }) {
             </Card.Body>
           </Col>
         </Row>
-        <Container>
-          <Row className="features">
-            <Col>
-              <li>{features.featuresOne}</li>
-              <li>{features.featuresTwo}</li>
-              <li>{features.featuresThree}</li>
-              <li>{features.featuresFour}</li>
-            </Col>
-            <Col >
-              <li>{features.featuresFive}</li>
-              <li>{features.featuresSix}</li>
-              <li>{features.featuresSeven}</li>
-              <li>{features.featuresEight}</li>
-            </Col>
-          </Row>
-        </Container>
+      </Container>
+      <Container className="featuresConteiner">
+        {product.features && Object.values(product.features).map((features, index) => <li className="features" key={index}> {features}</li>)}
       </Container>
     </Card>
-
   )
 }

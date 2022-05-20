@@ -2,30 +2,25 @@ import React from "react"
 import { Container } from "react-bootstrap"
 import { getProducts } from "../../Data/Productos"
 import ItemDetail from "../ItemDetail/ItemDetail"
+import Loading from "../Loading/Loading"
 
-export default function ItemDetailConteiner() {
+export default function ItemDetailConteiner({ productId }) {
 
-  const [productsList, setProductsList] = React.useState([])
-
-  const [productsFeatures, setProductsFeatures] = React.useState([])
-
-  React.useEffect(() => {
-    getProducts
-      .then((res) => setProductsList(res[0]))
-      .catch((error) => console.log(error))
-  }, [])
-
-  React.useEffect(() => {
-    getProducts
-      .then((res) => setProductsFeatures(res[0].features))
-      .catch((error) => console.log(error))
-  }, [])
-
+  const [product, setProduct] = React.useState([])
+  const [loading, setLoading] = React.useState(false)
   
+  React.useEffect(() => {
+    setLoading(true)
+    getProducts
+      .then((res) => setProduct(res.find(item => item.id === productId)))
+      .catch((error) => console.log(error))
+      .finally(()=> setLoading(false))
+  }, [productId])
+
   return (
     <Container>
-      <div>
-        <ItemDetail product={productsList} key={productsList.id} features={productsFeatures} />
+      <div className="itemDetailConteiner">
+      {loading ? <Loading/> : <ItemDetail product={product} />}
       </div>
     </Container>
   )
