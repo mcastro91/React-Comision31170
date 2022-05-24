@@ -1,8 +1,10 @@
 import React from "react";
 import { Button, Col, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
-export default function ItemCount({ stock, initial }) {
-  const [count, setCount] = React.useState(initial);
+export default function ItemCount({ stock, count, setCount, onAdd, isInCart }) {
+
+  const navigate = useNavigate()
 
   const addCount = () => {
     if (count < stock) {
@@ -15,10 +17,7 @@ export default function ItemCount({ stock, initial }) {
       setCount(count - 1)
     }
   };
-
-  const onSubmit = () => {
-    alert(`Se agregaron ${count} unidades al carrito`)
-  };
+  console.log(isInCart)
 
   const StockButton = ({ handleOnClick, text }) => {
     return <Button className="stockButton" onClick={() => handleOnClick()}>{text}</Button>;
@@ -35,7 +34,7 @@ export default function ItemCount({ stock, initial }) {
       <StockButton text="+" handleOnClick={addCount} />
       <Row>
         <Col>
-          <AddButton text="Añadir al carrito" handleOnSubmit={onSubmit} />
+          {isInCart ? (<AddButton text="Añadir al carrito" handleOnSubmit={onAdd} />) : (<AddButton text=" Ir al carrito" handleOnSubmit={() => navigate("/cart")} />)}
         </Col>
       </Row>
     </div>

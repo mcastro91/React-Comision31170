@@ -1,7 +1,18 @@
+import React from "react"
 import { Card, Row, Col, Container } from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount"
 
 export default function ItemDetail({ product }) {
+
+  const [count, setCount] = React.useState(1)
+
+  const [isInCart, setIsInCart] = React.useState (true)
+
+  const onSubmit = () => {
+    alert(`Se agregaron ${count} unidades al carrito`)
+    setIsInCart(false)
+  };
+
   return (
     <Card style={{ width: '80rem', margin: "5rem" }}>
       <Container>
@@ -21,7 +32,7 @@ export default function ItemDetail({ product }) {
                 </Card.Text>
               </Row>
               <Row>
-                <ItemCount stock={product.stock} initial={1} />
+                <ItemCount count={count} setCount={setCount} stock={product.stock} onAdd={onSubmit} isInCart={isInCart} />
               </Row>
             </Card.Body>
           </Col>

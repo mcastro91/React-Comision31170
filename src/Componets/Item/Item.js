@@ -1,5 +1,4 @@
 import { Card, Row } from "react-bootstrap"
-import ItemCount from "../ItemCount/ItemCount"
 import { Link } from "react-router-dom"
 
 export default function Item({ product }) {
@@ -16,7 +15,6 @@ export default function Item({ product }) {
             {product.description}
           </Card.Text>
         </Row>
-        <ItemCount stock={product.stock} initial={1} />
       </Card.Body>
     </Card>
   )
