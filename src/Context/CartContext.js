@@ -52,40 +52,42 @@ const CartProvider = ({ children }) => {
     }
   }
 
-
   const removeFromCart = ({ product, count }) => {
-    if (isInCart(product.id)) {
 
+    if (isInCart(product.id) && cart.find(product => product.quantity > 1)) {
       const newCart = cart.map(cartProduct => {
-        (cartProduct.id === product.id && cartProduct.quantity > 1) && (cartProduct.quantity = cartProduct.quantity - count)
+        (cartProduct.id === product.id && cartProduct.quantity > count) && (cartProduct.quantity = cartProduct.quantity - count)
         return cartProduct
-      })
-
-      const newCart2 = cart.map( cartProduct => cartProduct.id !== product.id  )
-
-      setCart(product.quantity > 1 ? newCart : newCart2)
+      }
+      )
+      setCart(newCart)
+      toast(`Se eliminaron ${count} unidades del carrito`)
+    }
+    else {
+      setCart(cart.filter(cartProduct => cartProduct.id !== product.id))
+      toast(`Se elimino ${product.name} del carrito`)
     }
   }
 
-const deleteAllFromCart = () => {
-  setCart([])
-}
+  const deleteAllFromCart = () => {
+    setCart([])
+  }
 
-const isInCart = (id) => {
-  return cart.find(product => product.id === id)
-}
+  const isInCart = (id) => {
+    return cart.find(product => product.id === id)
+  }
 
-console.log(cart)
+  console.log(cart)
 
-return (
-  <Provider value={{
-    cart,
-    addToCart,
-    removeFromCart,
-    deleteAllFromCart,
-    isInCart
-  }}>{children}</Provider>
-)
+  return (
+    <Provider value={{
+      cart,
+      addToCart,
+      removeFromCart,
+      deleteAllFromCart,
+      isInCart
+    }}>{children}</Provider>
+  )
 }
 
 export { CartContext, CartProvider }

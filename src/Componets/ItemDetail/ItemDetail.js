@@ -2,12 +2,14 @@ import React from "react"
 import { Card, Row, Col, Container } from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount"
 import { CartContext } from "../../Context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export default function ItemDetail({ product }) {
+  const navigate = useNavigate();
 
   const [count, setCount] = React.useState(1)
 
-  const { addToCart, removeFromCart } = React.useContext(CartContext)
+  const { addToCart, removeFromCart, isInCart } = React.useContext(CartContext)
 
   return (
     <Card style={{ width: '80rem', margin: "5rem" }}>
@@ -28,7 +30,7 @@ export default function ItemDetail({ product }) {
                 </Card.Text>
               </Row>
               <Row>
-                <ItemCount count={count} setCount={setCount} stock={product.stock} onAdd={() => addToCart({ count, product })} onDecrease={() => removeFromCart({ count, product })}/>
+                {isInCart(product.id) ? <ItemCount text={"Ir al Carrito"} count={count} setCount={setCount} stock={product.stock} onAdd={() => navigate("/cart")} onDecrease={() => removeFromCart({ count, product })}/> : <ItemCount text={"Agregar al carrito"} count={count} setCount={setCount} stock={product.stock} onAdd={() => addToCart({ count, product })} onDecrease={() => removeFromCart({ count, product })}/> }
               </Row>
             </Card.Body>
           </Col>
