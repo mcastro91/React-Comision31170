@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Col, Row } from "react-bootstrap";
 
-export default function ItemCount({ stock, count, setCount, onAdd, onDecrease, text }) {
+export default function ItemCount({ stock, count, setCount, onClick, text}) {
 
   const addCount = () => {
     if (count < stock) {
@@ -30,8 +30,7 @@ export default function ItemCount({ stock, count, setCount, onAdd, onDecrease, t
       <StockButton text="+" handleOnClick={addCount} />
       <Row>
         <Col>
-          <AddButton className="addButton" text={text} handleOnSubmit={onAdd} />
-          <AddButton className="addButton" text="Eliminar del Carrito" handleOnSubmit={onDecrease} />
+          <AddButton className="addButton" text={text} handleOnSubmit={onClick} />
         </Col>
       </Row>
     </div>

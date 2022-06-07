@@ -10,7 +10,7 @@ const CartProvider = ({ children }) => {
 
   const addToCart = ({ product, count }) => {
     if (isInCart(product.id)) {
-      const newCart = cart.map(cartProduct => {
+      const updateCart = cart.map(cartProduct => {
         if (cartProduct.id === product.id && (cartProduct.quantity + count) <= product.stock) {
           cartProduct.quantity = cartProduct.quantity + count;
           toast.success(`Se agregaron ${count} unidades al carrito`, {
@@ -36,7 +36,7 @@ const CartProvider = ({ children }) => {
         }
         return cartProduct
       })
-      setCart(newCart)
+      setCart(updateCart)
     }
     else {
       setCart([...cart, { ...product, quantity: +count }])
@@ -52,21 +52,43 @@ const CartProvider = ({ children }) => {
     }
   }
 
-  const removeFromCart = ({ product, count }) => {
+  const addQuantity = ({ product }) => {
 
-    if (isInCart(product.id) && cart.find(product => product.quantity > 1)) {
-      const newCart = cart.map(cartProduct => {
-        (cartProduct.id === product.id && cartProduct.quantity > count) && (cartProduct.quantity = cartProduct.quantity - count)
+    if (isInCart(product.id)) {
+      const updateCart = cart.map(cartProduct => {
+        (cartProduct.id === product.id) && (cartProduct.quantity = cartProduct.quantity + 1)
         return cartProduct
       }
       )
-      setCart(newCart)
-      toast(`Se eliminaron ${count} unidades del carrito`)
+      setCart(updateCart)
     }
-    else {
-      setCart(cart.filter(cartProduct => cartProduct.id !== product.id))
-      toast(`Se elimino ${product.name} del carrito`)
+  }
+
+  const removeQuantity = ({ product }) => {
+
+    if (isInCart(product.id) && cart.find(product => product.quantity > 1)) {
+      const updateCart = cart.map(cartProduct => {
+        (cartProduct.id === product.id) && (cartProduct.quantity = cartProduct.quantity - 1)
+        return cartProduct
+      }
+      )
+      setCart(updateCart)
     }
+  }
+
+  const totalQuantity = () => {
+    let total = 0;
+    cart.map(product => total = total + product.quantity)
+    return total
+  }
+
+  const totalPrice = () => {
+    return cart.reduce((total, product) => total + (product.price * product.quantity), 0)
+  }
+
+  const removeFromCart = ({ product }) => {
+    setCart(cart.filter(cartProduct => cartProduct.id !== product.id))
+    toast(`Se elimino ${product.name} del carrito`)
   }
 
   const deleteAllFromCart = () => {
@@ -78,15 +100,23 @@ const CartProvider = ({ children }) => {
   }
 
   console.log(cart)
+  console.log(totalQuantity())
+  console.log(totalPrice())
 
   return (
     <Provider value={{
       cart,
       addToCart,
+      addQuantity,
+      removeQuantity,
       removeFromCart,
       deleteAllFromCart,
-      isInCart
-    }}>{children}</Provider>
+      isInCart,
+      totalQuantity,
+      totalPrice
+    }}>
+      {children}
+    </Provider>
   )
 }
 

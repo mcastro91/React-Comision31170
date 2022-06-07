@@ -4,7 +4,8 @@ import Home from "./view/Home/Home";
 import ProductsDetail from "./view/ProductsDetail/ProductsDetail";
 import Products from "./view/Products/Products";
 import Category from "./view/Category/Category"
-import Cart from "./view/Cart/Cart";
+import CartView from "./view/CartView/CartView";
+import Checkout from "./view/Checkout/Checkout";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
             <Route exac path="/products" element={<Products />} />
             <Route exac path="/products/:id" element={<ProductsDetail />} />
             <Route exac path="/category/:category" element={<Category />} />
-            <Route exac path="/cart" element={<Cart />} />
+            <Route exac path="/cart" element={<CartView />} />
+            <Route exac path="/checkout" element={<Checkout />} />
           </Routes>
         </CartProvider>
       </BrowserRouter>

@@ -2,17 +2,18 @@ import React from "react";
 import Footer from "../../Componets/Footer/Footer";
 import Header from "../../Componets/Header/Header";
 import { CartContext } from "../../Context/CartContext";
-import Item from "../../Componets/Item/Item";
+import CartEmpty from "../../Componets/CartEmpty/CartEmpty";
+import Cart from "../../Componets/Cart/Cart";
 
 
-export default function Cart() {
+export default function CartView() {
 
   const { cart } = React.useContext(CartContext)
 
   return (
     <>
       <Header />
-      {cart.map((product) => <Item product={product} key={product.id} />)}
+      {(cart.length === 0) ? <CartEmpty/> : <Cart/>}
       <Footer />
     </>
   )

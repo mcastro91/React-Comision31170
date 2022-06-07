@@ -13,7 +13,7 @@
   padding: 1rem;
 }
 
-.CartWidget{
+.CartWidget {
   color: black;
   width: 4.5rem;
   height: 4.5rem;
@@ -101,11 +101,13 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.addButton{
+
+.addButton {
   margin: .5rem;
 }
 
 .count {
+  font-size: 1.3rem;
   padding: 1rem;
 }
 
@@ -139,6 +141,92 @@
 .loading {
   text-align: center;
   height: 30rem;
+}
+
+.cart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.cartCard {
+  padding: 1rem;
+  width: 80rem;
+  height: 15rem;
+  margin: 3rem 3rem 1rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cartCardBody {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imgCartCard {
+  height: 10rem;
+  width: 10rem;
+}
+
+.cartCardTitle {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.cartCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.cartDeleteButton {
+  padding: 2rem;
+  cursor: pointer
+}
+
+.cartStockButton {
+  border-radius: 50%;
+  border: 1px solid black;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.buttonEmpty{
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.purchaseSummary {
+  width: 80rem;
+  border: 1px grey solid;
+  padding: 5rem;
+  margin-bottom: 1rem;
+}
+
+.purchaseSummaryTitle {
+  font-weight: bolder;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+.purchaseSummaryList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1.5rem;
+  font-size: 1.5rem;
 }
 
 footer {

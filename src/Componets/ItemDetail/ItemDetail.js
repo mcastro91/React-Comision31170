@@ -9,7 +9,7 @@ export default function ItemDetail({ product }) {
 
   const [count, setCount] = React.useState(1)
 
-  const { addToCart, removeFromCart, isInCart } = React.useContext(CartContext)
+  const { addToCart, isInCart } = React.useContext(CartContext)
 
   return (
     <Card style={{ width: '80rem', margin: "5rem" }}>
@@ -30,7 +30,7 @@ export default function ItemDetail({ product }) {
                 </Card.Text>
               </Row>
               <Row>
-                {isInCart(product.id) ? <ItemCount text={"Ir al Carrito"} count={count} setCount={setCount} stock={product.stock} onAdd={() => navigate("/cart")} onDecrease={() => removeFromCart({ count, product })}/> : <ItemCount text={"Agregar al carrito"} count={count} setCount={setCount} stock={product.stock} onAdd={() => addToCart({ count, product })} onDecrease={() => removeFromCart({ count, product })}/> }
+                {<ItemCount text={isInCart(product.id) ? "Finalizar Compra" : "Agregar al carrito"} count={count} setCount={setCount} stock={product.stock} onClick={isInCart(product.id) ? () => navigate("/cart") : () => addToCart({ count, product })} />}
               </Row>
             </Card.Body>
           </Col>
