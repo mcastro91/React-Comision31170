@@ -58,8 +58,7 @@ const CartProvider = ({ children }) => {
       const updateCart = cart.map(cartProduct => {
         (cartProduct.id === product.id) && (cartProduct.quantity = cartProduct.quantity + 1)
         return cartProduct
-      }
-      )
+      })
       setCart(updateCart)
     }
   }
@@ -70,8 +69,7 @@ const CartProvider = ({ children }) => {
       const updateCart = cart.map(cartProduct => {
         (cartProduct.id === product.id) && (cartProduct.quantity = cartProduct.quantity - 1)
         return cartProduct
-      }
-      )
+      })
       setCart(updateCart)
     }
   }

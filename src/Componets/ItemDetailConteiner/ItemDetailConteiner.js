@@ -1,8 +1,9 @@
 import React from "react"
 import { Container } from "react-bootstrap"
-import { getProducts } from "../../Data/Productos"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import Loading from "../Loading/Loading"
+import { getDoc, doc, getFirestore} from "firebase/firestore"
+
 
 export default function ItemDetailConteiner({ productId }) {
 
@@ -11,10 +12,12 @@ export default function ItemDetailConteiner({ productId }) {
   
   React.useEffect(() => {
     setLoading(true)
-    getProducts
-      .then((res) => setProduct(res.find(item => item.id === productId)))
-      .catch((error) => console.log(error))
-      .finally(()=> setLoading(false))
+    const db = getFirestore()
+    const product = doc(db, "Products", productId)
+    getDoc(product)
+    .then(snapshot => {
+      setProduct({id: snapshot.id, ...snapshot.data()})})
+    .finally(()=> setLoading(false))
   }, [productId])
 
   return (
