@@ -97,10 +97,6 @@ const CartProvider = ({ children }) => {
     return cart.find(product => product.id === id)
   }
 
-  console.log(cart)
-  console.log(totalQuantity())
-  console.log(totalPrice())
-
   return (
     <Provider value={{
       cart,

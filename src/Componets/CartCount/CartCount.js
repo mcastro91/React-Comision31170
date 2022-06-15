@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 export default function CartCount({ stock, count, setCount, removeFromCart, removeQuantity, addQuantity}) {
-
   
   const addCount = () => {
     if (count < stock) {

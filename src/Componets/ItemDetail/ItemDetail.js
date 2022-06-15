@@ -12,7 +12,7 @@ export default function ItemDetail({ product }) {
   const { addToCart, isInCart } = React.useContext(CartContext)
 
   return (
-    <Card style={{ width: '80rem', margin: "5rem" }}>
+    <Card className="cardItem">
       <Container>
         <Row>
           <Col>
@@ -20,9 +20,9 @@ export default function ItemDetail({ product }) {
           </Col>
           <Col>
             <Card.Body className="cardBodyDetail">
-              <Row className="titleCardDetail">
-                <Card.Title className="titleCardDetailDos">{product.name}</Card.Title>
-                <Card.Title className="titleCardDetailDos">${product.price}</Card.Title>
+              <Row className="titleCardDetailRow">
+                <Card.Title className="titleCardDetail">{product.name}</Card.Title>
+                <Card.Title className="titleCardDetail">${product.price}</Card.Title>
               </Row>
               <Row className="descripcionCardDetail">
                 <Card.Text>

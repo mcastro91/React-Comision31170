@@ -7,7 +7,7 @@ export default function CartWidget() {
   const {totalQuantity} = React.useContext(CartContext)
 
   return (
-    <div className="CartWidget">
+    <div className="cartWidget">
       <FontAwesomeIcon icon={faCartShopping} size="xl" />
       <span className="cartItems">
         {totalQuantity()}

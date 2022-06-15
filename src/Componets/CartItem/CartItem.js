@@ -22,7 +22,7 @@ export default function Item({ product }) {
             <Card.Title>${product.price} xUn</Card.Title>
           </Col>
           <Col>
-            <CartCount count={count} setCount={setCount} stock={product.stock} removeQuantity={()=> removeQuantity({product})} addQuantity={()=> addQuantity({product })} removeFromCart={()=> removeFromCart({product})} />
+            <CartCount count={count} setCount={setCount} stock={product.stock} removeQuantity={() => removeQuantity({ product })} addQuantity={() => addQuantity({ product })} removeFromCart={() => removeFromCart({ product })} />
           </Col>
         </Row>
       </Card.Body>

@@ -7,13 +7,13 @@
   padding: 0%;
 }
 
-.Navbar {
+.navbarList {
   background-color: cadetblue;
   width: 100%;
   padding: 1rem;
 }
 
-.CartWidget {
+.cartWidget {
   color: black;
   width: 4.5rem;
   height: 4.5rem;
@@ -46,6 +46,12 @@
   row-gap: 1.5rem;
 }
 
+.cardItem{
+  width: 85rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;  
+}
+
 .descripcionCard {
   height: 20rem;
   padding: 2rem;
@@ -75,13 +81,13 @@
   width: 50rem;
 }
 
-.titleCardDetail {
+.titleCardDetailRow {
   padding: 2rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
 
-.titleCardDetailDos {
+.titleCardDetail {
   text-align: center;
   font-size: 3rem;
   font-weight: bolder;
