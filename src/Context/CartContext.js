@@ -8,31 +8,24 @@ const CartProvider = ({ children }) => {
 
   const [cart, setCart] = React.useState([])
 
+  const alertAddToCart = ({count}) => {
+    toast.success(`Se agregaron ${count} unidades al carrito`, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  }
+
   const addToCart = ({ product, count }) => {
     if (isInCart(product.id)) {
       const updateCart = cart.map(cartProduct => {
         if (cartProduct.id === product.id && (cartProduct.quantity + count) <= product.stock) {
           cartProduct.quantity = cartProduct.quantity + count;
-          toast.success(`Se agregaron ${count} unidades al carrito`, {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
-        }
-        else {
-          toast.error('No quedan productos en stock', {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
+          alertAddToCart()
         }
         return cartProduct
       })
@@ -40,15 +33,7 @@ const CartProvider = ({ children }) => {
     }
     else {
       setCart([...cart, { ...product, quantity: +count }])
-      toast.success(`Se agregaron ${count} unidades al carrito`, {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      alertAddToCart()
     }
   }
 

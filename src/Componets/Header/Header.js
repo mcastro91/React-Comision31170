@@ -4,13 +4,11 @@ import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
-    <header className="header">
+    <header>
       <Container fluid>
         <Navbar bg="light" expand="lg" className='header'>
           <Navbar.Brand>
-            <Link className='link' to={"/"}>
-              TecnoLujan
-            </Link>
+            <Link className='link' to={"/"}> TecnoLujan </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className='navbarList'>

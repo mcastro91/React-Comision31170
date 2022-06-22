@@ -20,10 +20,11 @@ export default function ItemCount({ stock, count, setCount, onClick, text}) {
   };
 
   const AddButton = ({ handleOnSubmit, text }) => {
-    return <Button className="addButton" onClick={() => handleOnSubmit()}> {text} </Button>;
+    return<Button className="addButton" onClick={() => handleOnSubmit()}> {text} </Button>;
   };
   
   return (
+    (stock > 0) ?
     <div className="itemCount">
       <StockButton text="-" handleOnClick={decreaseCount} />
       <span className="count">{count}</span>
@@ -33,6 +34,10 @@ export default function ItemCount({ stock, count, setCount, onClick, text}) {
           <AddButton className="addButton" text={text} handleOnSubmit={onClick} />
         </Col>
       </Row>
+    </div>
+    :
+    <div className="itemCount">
+    <Button variant="secondary" disabled>Sin Stock</Button>
     </div>
   );
 }

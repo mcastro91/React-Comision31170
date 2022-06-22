@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 export default function Item({ product }) {
   return (
     <Card style={{ width: '18rem' }}>
+      {(product.stock > 0) ? <p className="pStock">En Stock</p> : <p className="pOutOfStock">Sin Stock</p>}
       <Link to={`/products/${product.id}`}><Card.Img className="imgCard" variant="top" src={product.img} /> </Link>
       <Card.Body>
         <Row className="titleCard">

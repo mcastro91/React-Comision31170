@@ -30,7 +30,6 @@ export default function ItemListConteiner({ title, category }) {
     }
   }, [category])
 
-
   return (
     <Container>
       <div className="itemListConteiner">
