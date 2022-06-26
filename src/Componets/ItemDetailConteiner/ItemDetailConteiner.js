@@ -31,8 +31,8 @@ export default function ItemDetailConteiner({ productId }) {
     noProduct ?
       <Container>
         <div className="noProduct">
-          <h1>No existe el producto indicado</h1>
-          <NavigateButton text="Volver al inicio" path={("/")} />
+          <h1>El producto indicado no existe</h1>
+          <NavigateButton text="Visita nuestro HOME" path={("/")} />
         </div>
       </Container>
       :

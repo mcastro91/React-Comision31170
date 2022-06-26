@@ -36,13 +36,21 @@ export default function Checkout() {
     }
   }
 
+  const time = () => {
+    const date = new Date()
+    const hour = date.getHours()
+    const minutes = date.getMinutes()
+    return `${date.toLocaleDateString()} ${hour}:${minutes}`
+  }
+
   const handleOnSubmit = (e) => {
     e.preventDefault()
     const order = {
       buyer: formValues,
       items: cart,
       total: totalPrice(),
-      status: "Generada"
+      status: "Generada",
+      date: time()
     }
     const db = getFirestore()
     const ordersCollection = collection(db, "Orders")
@@ -178,6 +186,9 @@ export default function Checkout() {
             </Row>
             <Row>
               <p>Provincia: {shoppingList.buyer.province}</p>
+            </Row>
+            <Row>
+              <p>Fecha:  {shoppingList.date}</p>
             </Row>
           </Col>
           <Col className="orderConteinerCol">
