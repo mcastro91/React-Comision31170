@@ -1,7 +1,7 @@
 # CorderHouse. Trabajo Final ReactJS Comision  - Mario Castro
 A continuacion se detalla los hitos mas importantes del proyecto
 
-![]https://drive.google.com/file/d/1Fy0tbjs39T24YwazrulTbgaisuBE7UHr/view?usp=sharing
+![https://drive.google.com/file/d/1Fy0tbjs39T24YwazrulTbgaisuBE7UHr/view?usp=sharing]
 
 ## Installation
 
